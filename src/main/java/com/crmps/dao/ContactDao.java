@@ -40,7 +40,7 @@ public class ContactDao {
 	public List<Contact> findByUid(String entityUid) {
 		LOG.info("Querying Person");
 		String sql="select c.uid,c.type_id, c.value"
-				+ ",c.created_by,c.updated_by, c.created_timestamp,c.updated_timestamp from Contact c,entity_contact_rel cr where cr.contact_uid = c.uid and cr.entity_uid  = ?";
+				+ ",cr.created_by,cr.updated_by, cr.created_timestamp,cr.updated_timestamp from Contact c,entity_contact_rel cr where cr.contact_uid = c.uid and cr.entity_uid  = ?";
 		List<Contact> contactList = jdbcTemplate.query(sql
 				, new Object[] { entityUid } ,
 				(rs, rowNum) -> {

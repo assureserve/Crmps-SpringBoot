@@ -1,0 +1,17 @@
+/target/
+/.classpath
+/*/.classpath
+/.project
+/*/.project
+/.settings/*
+/*/.settings/*
+.idea
+*.iml
+*.iws
+.vagrant
+*.war
+/lib
+/logs
+
+*.ipr
+*.checkstyle

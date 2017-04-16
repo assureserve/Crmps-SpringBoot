@@ -81,7 +81,7 @@ public class PersonProfileTest {
 		System.out.println("Person Id "+id);
 	}
 	
-	@Test
+	//@Test
 	public void testFindPersonProfile(){
 		Person person = personProfileService.findPersonProfileForUserId("ppalledp");
 		System.out.println("Person Name" + person.getFirstName());

@@ -1,4 +1,4 @@
-create table person (  uid  varchar ( 50) NOT NULL  , first_nmae varchar( 30) NOT NULL  , last_name varchar( 30 ) NOT NULL ,govt_id varchar ( 30 ) , pic_url varchar ( 100 ) 
+create table person (  uid  varchar ( 50) NOT NULL  , first_name varchar( 30) NOT NULL  , last_name varchar( 30 ) NOT NULL ,govt_id varchar ( 30 ) , pic_url varchar ( 100 )
  , user_id varchar ( 20 ) NOT NULL , password varchar ( 30 )  NOT NULL
  ,PRIMARY KEY ( uid ) ) ;
 
@@ -42,12 +42,14 @@ create table authorization ( uid varchar ( 50 ), entity_id varchar ( 50 ), type 
 create table reference ( uid varchar ( 50 ), entity_id varchar ( 50 ), type varchar ( 10 ) , referred_date date  ) ;
 
 
-alter table person ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() 
-alter table address ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() 
+alter table person ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP();
+alter table address ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP();
 
-alter table entity_address_rel ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() 
+alter table entity_address_rel ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP();
 
-alter table entity_contact_rel ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() 
+alter table entity_contact_rel ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP();
 
-alter table person add CONSTRAINT UC_Person_userid UNIQUE (user_id )
+alter table contact ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  varchar(30) , ADD COLUMN created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , ADD COLUMN updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP();
+
+alter table person add CONSTRAINT UC_Person_userid UNIQUE (user_id );
 

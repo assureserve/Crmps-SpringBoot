@@ -31,7 +31,7 @@ public class PersonDaoTest {
 		
 	}
 	
-	@Test
+	//@Test
 	public void testPersonUserId() {
 		Person person = personDao.findByUserId("palledp");
 		System.out.println("First Person "+person.getFirstName());
