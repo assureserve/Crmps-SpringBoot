@@ -26,7 +26,7 @@ public class CrmpsApplication extends SpringBootServletInitializer {
     }
 	
 	 @Bean(name = "dsMySql")
-	    @ConfigurationProperties(prefix="spring.mysql.datasource")
+	    @ConfigurationProperties(prefix="spring.h2.datasource")
 	    public DataSource mySqlDataSource() {
 	        return DataSourceBuilder.create().build();
 	    }

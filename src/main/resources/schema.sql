@@ -1,0 +1,55 @@
+create table person (  uid  varchar ( 50) NOT NULL  , first_name varchar( 30) NOT NULL  , last_name varchar( 30 ) NOT NULL ,govt_id varchar ( 30 ) , pic_url varchar ( 100 )
+ , user_id varchar ( 20 ) NOT NULL , password varchar ( 30 )  NOT NULL
+ ,PRIMARY KEY ( uid ) ) ;
+
+
+ create table address( uid varchar (50 ) NOT NULL, street_1 varchar ( 75) NOT NULL , street_2 varchar( 75) , city varchar( 30 ) 
+ , state varchar ( 30) NOT NULL 
+ , zip varchar ( 20 )  NOT NULL,  country varchar(5) 
+ , type varchar ( 10 )  
+ ,PRIMARY KEY ( uid ) );
+
+
+ create table entity_address_rel ( entity_uid varchar ( 50 ), address_uid  varchar ( 50 )  , entity_type varchar ( 10 ) );
+
+ create table contact_type ( type_id varchar ( 10 ), description varchar ( 30 ) ) ;
+ 
+ create table contact ( uid varchar( 50 ) , type_id  varchar( 10 ) , value varchar ( 100 ) )  ;
+
+
+ create table entity_contact_rel ( entity_uid varchar( 50), contact_uid varchar ( 50 ) , entity_type varchar ( 10 ) );
+
+ create table company ( uid varchar ( 50 ) , name varchar( 50) NOT NULL, legal_name varchar( 50) NOT NULL ,  pic_url varchar ( 100 )  , business_type varchar( 10 ) , business_start_date date  ) ;
+
+
+
+create table role (   role_type varchar( 30) NOT NULL   , description varchar ( 50 ) 
+ ,PRIMARY KEY ( role_type ) ) ;
+
+
+create table company_person_role_rel ( company_uid varchar( 50), person_uid varchar ( 50 ) , role_type varchar ( 10 ) );
+
+create table goverment_Id ( govt_id  varchar ( 30 ) NOT NULL , entity_id  varchar (50 ),  type varchar (10) , exp_date date  );
+
+
+
+create table award_certification ( uid varchar ( 50 ), entity_id varchar ( 50 ), type varchar ( 10 ) ,  award_date date  );
+
+
+create table authorization ( uid varchar ( 50 ), entity_id varchar ( 50 ), type varchar ( 10 ) , authorized date  ) ;
+
+
+create table reference ( uid varchar ( 50 ), entity_id varchar ( 50 ), type varchar ( 10 ) , referred_date date  ) ;
+
+
+alter table person ADD COLUMN  (created_by varchar(30) , updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP());
+alter table address ADD COLUMN  (created_by varchar(30) , updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP());
+
+alter table entity_address_rel ADD COLUMN  (created_by varchar(30) , updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP());
+
+alter table entity_contact_rel ADD COLUMN  (created_by varchar(30) , updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP());
+
+alter table contact ADD COLUMN  (created_by varchar(30) , updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP());
+
+alter table person add CONSTRAINT UC_Person_userid UNIQUE (user_id );
+
