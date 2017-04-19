@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 @SpringBootApplication
-public class CrmpsApplication extends SpringBootServletInitializer {
+public class CrmpsApplication { //extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CrmpsApplication.class, args);
