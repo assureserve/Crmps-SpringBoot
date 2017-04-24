@@ -1,6 +1,8 @@
 package com.crmps.domain;
 
 import java.util.List;
+import java.util.Map;
+
 
 
 public class Person extends AbstractBaseEntity{
@@ -18,28 +20,114 @@ public class Person extends AbstractBaseEntity{
 	private String govermentId;
 
 	private String pictureURL;
+	
+	private List<Address> addresses ;
+
+	private List<Contact> contacts ;
+	
+	private List<ProductWorkItem> productWorkItems ;
+	
+	private List<WorkHour> workHours ;
+	
+	private List<ServiceProduct> serviceProducts ;
+	
+	private Map<String,List<Credential>> credentials ;
+	
+	private Map<String,List<Category>> categories ;
+
+	
+	public Map<String, List<Category>> getCategories() {
+		return categories;
+	}
+
+
+
+	public void setCategories(Map<String, List<Category>> categories) {
+		this.categories = categories;
+	}
+
+
+
+	public Map<String, List<Credential>> getCredentials() {
+		return credentials;
+	}
+	
+	private Map<String,List<Content>> contents ;
+	
+	
+
+
+	public Map<String, List<Content>> getContents() {
+		return contents;
+	}
+
+
+
+	public void setContents(Map<String, List<Content>> contents) {
+		this.contents = contents;
+	}
+
+
+
+	public void setCredentials(Map<String, List<Credential>> credentials) {
+		this.credentials = credentials;
+	}
+
+
+	
+	public List<ProductWorkItem> getProductWorkItems() {
+		return productWorkItems;
+	}
+
+	public void setProductWorkItems(List<ProductWorkItem> productWorkItems) {
+		this.productWorkItems = productWorkItems;
+	}
+
+	public List<WorkHour> getWorkHours() {
+		return workHours;
+	}
+
+	public void setWorkHours(List<WorkHour> workHours) {
+		this.workHours = workHours;
+	}
+
+	public List<ServiceProduct> getServiceProducts() {
+		return serviceProducts;
+	}
+
+	public void setServiceProducts(List<ServiceProduct> serviceProducts) {
+		this.serviceProducts = serviceProducts;
+	}
+
+	
+
 
 	
 	
-	private List<Address> addressList ;
 
-	private List<Contact> contactList ;
-	
-	public List<Contact> getContactList() {
-		return contactList;
+
+	public List<Address> getAddresses() {
+		return addresses;
 	}
 
-	public void setContactList(List<Contact> contactList) {
-		this.contactList = contactList;
+
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 
-	public List<Address> getAddressList() {
-		return addressList;
+
+
+	public List<Contact> getContacts() {
+		return contacts;
 	}
 
-	public void setAddressList(List<Address> addressList) {
-		this.addressList = addressList;
+
+
+	public void setContacts(List<Contact> contacts) {
+		this.contacts = contacts;
 	}
+
 
 
 	public String getGovermentId() {

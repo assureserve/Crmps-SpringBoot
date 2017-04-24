@@ -5,10 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.crmps.dao.AddressDao;
 import com.crmps.dao.ContactDao;
 import com.crmps.dao.EntityReleationDao;
-import com.crmps.domain.Address;
 import com.crmps.domain.Contact;
 import com.crmps.domain.EntityContactRelation;
 
