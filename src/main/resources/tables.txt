@@ -132,7 +132,7 @@ create table entity_credential
 )
 
 create table category_type
-( uid varchar(50),  description varchar(50) , type varchar(10)
+( uid varchar(50),  description varchar(50) , type varchar(30)
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
@@ -160,7 +160,7 @@ insert into service_product_sub_type ( uid, service_product_type_uid ,descriptio
 insert into product_item ( uid , service_product_type_uid, description ) values ( '100','100','Washer' ) ;
 insert into product_item ( uid , service_product_type_uid, description ) values ( '101','100','Microwave' ) ;
 
-insert into category_type ( uid , type, description ) values ( '100','RESPONSE','Emergency Response' ) ;
+insert into category_type ( uid , type, description ) values ( '100','responseTime','Emergency Response' ) ;
 
 
 create table enitity_content_rel

@@ -67,7 +67,7 @@ public class CategoryModel  {
 		return  entityCategoryDao.findCategroyByEntityAndType(entityUid);
 	}
 	
-	public Map<String,List<Category> > findCredentialsByEntity(String entityUid) {
+	public Map<String,List<Category> > findCategoriesByEntity(String entityUid) {
 		Map<String,List<Category>> map = new HashMap<String,List<Category>>();
 		List<String> categoryKeys =Constant.getCategoryList();
 		for(String key: categoryKeys){

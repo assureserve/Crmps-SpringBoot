@@ -115,7 +115,7 @@ public class PeronProfileSeviceImpl implements PersonProfileService {
 			Map<String, List<Credential>> credentials = credentialModel.findCredentialsByEntity(person.getUid());
 			person.setCredentials(credentials);
 
-			Map<String, List<Category>> categories = categoryModel.findCredentialsByEntity(person.getUid());
+			Map<String, List<Category>> categories = categoryModel.findCategoriesByEntity(person.getUid());
 			person.setCategories(categories);
 
 		}
