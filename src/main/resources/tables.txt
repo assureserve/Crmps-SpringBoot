@@ -53,3 +53,120 @@ alter table contact ADD COLUMN  created_by varchar(30) , ADD COLUMN updated_by  
 
 alter table person add CONSTRAINT UC_Person_userid UNIQUE (user_id );
 
+
+
+
+create table entity_business_type ( uid varchar(50), entity_uid varchar (50), business_type_uid int  
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( uid ,entity_uid  ) 
+)
+
+
+create table business_type ( uid varchar(50) , business_type varchar ( 10 ), description varchar(50) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( uid  ) 
+)
+
+
+create table entity_working_hour ( uid varchar(50), entity_uid varchar (50), day varchar(10), from_time varchar(10), to_time varchar( 10)
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( uid ) 
+) 
+
+create table entity_business_type ( uid varchar(50), entity_uid varchar (50), business_type_uid int  
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( uid ,entity_uid  ) 
+)
+
+
+create table service_product_type ( uid varchar(50),  description varchar(50) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( uid  ) 
+)
+
+
+
+create table service_product_sub_type ( uid varchar(50),  service_product_type_uid varchar(50) , description varchar(50) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( uid  ) 
+)
+
+
+
+
+create table entity_service_product_rel ( entity_uid varchar(50),  service_product_type_uid varchar(50) ,  service_product_sub_type_uid varchar(50) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+
+ ,PRIMARY KEY ( entity_uid, service_product_type_uid ) 
+)
+
+
+create table entity_product_work_item 
+( uid varchar(50), entity_uid varchar(50),  service_product_type_uid varchar(50)  , product_item_uid varchar(50) , current_history varchar ( 1) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+ ,PRIMARY KEY
+ ( uid  ) 
+)
+
+
+
+
+create table product_item 
+( uid varchar(50), service_product_type_uid varchar(50), description varchar(50)
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+ ,PRIMARY KEY
+ ( uid  ) 
+)
+
+create table entity_credential
+( uid varchar(50), entity_uid varchar(50),  type varchar(30)  , id_number varchar(30), description varchar(50) , issue_date date, expire_date date 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+ ,PRIMARY KEY
+ ( uid  ) 
+)
+
+create table category_type
+( uid varchar(50),  description varchar(50) , type varchar(30)
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+ ,PRIMARY KEY
+ ( uid  ) 
+)
+
+
+
+
+create table enitity_category_rel
+( uid varchar(50) , entity_uid varchar(50) , payment_uid varchar(50) , type varchar( 10 ) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+ ,PRIMARY KEY
+ ( uid  ) 
+)
+
+
+insert into service_product_type ( uid , description ) values ( '100','Appliances' ) ;
+insert into service_product_type ( uid , description ) values ( '101','Finance' ) ;
+
+insert into service_product_sub_type ( uid, service_product_type_uid ,description ) values ( '100','101','Mortgage and Loan' )
+
+
+
+
+insert into product_item ( uid , service_product_type_uid, description ) values ( '100','100','Washer' ) ;
+insert into product_item ( uid , service_product_type_uid, description ) values ( '101','100','Microwave' ) ;
+
+insert into category_type ( uid , type, description ) values ( '100','responseTime','Emergency Response' ) ;
+
+
+create table enitity_content_rel
+( uid varchar(50) , entity_uid varchar(50) , url varchar(50) , type varchar( 10 )  , header varchar(20) 
+,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
+ ,PRIMARY KEY
+ ( uid  ) 
+)
+
