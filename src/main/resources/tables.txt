@@ -60,34 +60,34 @@ create table entity_business_type ( uid varchar(50), entity_uid varchar (50), bu
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( uid ,entity_uid  ) 
-)
+);
 
 
 create table business_type ( uid varchar(50) , business_type varchar ( 10 ), description varchar(50) 
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( uid  ) 
-)
+);
 
 
 create table entity_working_hour ( uid varchar(50), entity_uid varchar (50), day varchar(10), from_time varchar(10), to_time varchar( 10)
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( uid ) 
-) 
+) ;
 
 create table entity_business_type ( uid varchar(50), entity_uid varchar (50), business_type_uid int  
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( uid ,entity_uid  ) 
-)
+);
 
 
 create table service_product_type ( uid varchar(50),  description varchar(50) 
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( uid  ) 
-)
+);
 
 
 
@@ -95,7 +95,7 @@ create table service_product_sub_type ( uid varchar(50),  service_product_type_u
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( uid  ) 
-)
+);
 
 
 
@@ -104,7 +104,7 @@ create table entity_service_product_rel ( entity_uid varchar(50),  service_produ
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
 
  ,PRIMARY KEY ( entity_uid, service_product_type_uid ) 
-)
+);
 
 
 create table entity_product_work_item 
@@ -112,7 +112,7 @@ create table entity_product_work_item
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
-)
+);
 
 
 
@@ -122,21 +122,21 @@ create table product_item
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
-)
+);
 
 create table entity_credential
 ( uid varchar(50), entity_uid varchar(50),  type varchar(30)  , id_number varchar(30), description varchar(50) , issue_date date, expire_date date 
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
-)
+);
 
 create table category_type
 ( uid varchar(50),  description varchar(50) , type varchar(30)
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
-)
+);
 
 
 
@@ -146,7 +146,7 @@ create table enitity_category_rel
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
-)
+);
 
 
 insert into service_product_type ( uid , description ) values ( '100','Appliances' ) ;
@@ -168,5 +168,5 @@ create table enitity_content_rel
 ,created_by varchar(30) ,updated_by  varchar(30) , created_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP() , updated_timestamp timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP()
  ,PRIMARY KEY
  ( uid  ) 
-)
+);
 
